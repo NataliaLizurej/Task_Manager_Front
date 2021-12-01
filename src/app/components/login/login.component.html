@@ -1,0 +1,25 @@
+<div class="main-div">
+    <img class="img2" src="./assets/img/login_img.PNG"/>
+    <mat-card class="example-card">
+        <div class="in-div">
+            <br>
+            <form [formGroup]="loginForm">
+            <h2 class="nag2">Login</h2>
+            <mat-form-field class="mat-form-field-exmp">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="username">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+            </mat-form-field>
+            <mat-card-actions>
+                <button (click)="auth()" mat-stroked-button>Submit</button>
+            </mat-card-actions>
+        </form>
+        </div>
+    </mat-card>
+</div>
+
+
+

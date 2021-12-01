@@ -1,0 +1,17 @@
+.p1 {
+    font-size:xx-large;
+    margin-top: 4%;
+    color: gray;
+
+  
+}
+
+.d1 {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.img1 {
+    margin-top: -5%;
+}
