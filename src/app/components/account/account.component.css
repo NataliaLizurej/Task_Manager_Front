@@ -1,0 +1,23 @@
+.account-main-div {
+    display: flex;
+    justify-content: center;
+}
+
+.account-card {
+    width: 800px;
+    height: 500px;
+    border-radius: 35px;
+    margin-top: 4%;
+    text-align: center;
+}
+
+.h1-card {
+    color: gray;
+    font-size:x-large;
+}
+
+:host ::ng-deep .mat-card {
+    border-color: #0ca2c7 !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+}

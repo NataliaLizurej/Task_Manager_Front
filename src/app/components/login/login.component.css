@@ -32,3 +32,9 @@
     border-style: solid !important;
     border-width: 1px !important;
 }
+
+
+.error {
+    color: red;
+    font-size: smaller;
+}

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Credentials } from 'src/app/Models/credentials';
 import { LoginService } from 'src/app/Services/LoginService/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +11,22 @@ import { LoginService } from 'src/app/Services/LoginService/login.service';
 })
 export class LoginComponent implements OnInit {
 
+  isSuccessLogin = true;
+
   loginForm: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
   })
 
-  constructor(private loginService: LoginService) { }
+  get username() {
+    return this.loginForm.get('username')
+  }
+
+  get password() {
+    return this.loginForm.get('password')
+  }
+
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,13 +40,14 @@ export class LoginComponent implements OnInit {
     this.loginService.getAuth(credentials).subscribe(
       value => {
         console.log(value)
-        let token = value.token;
-        localStorage.setItem('token', token);
+        localStorage.setItem('token', value.token);
+        localStorage.setItem('user_id', value.user_id.toString());
         console.log(localStorage);
-        window.location.href = "http://localhost:4200/account"
+        this.router.navigate(['/account'])
       },
       error => {
         console.log(error);
+        this.isSuccessLogin = false;
       }
     );
 

@@ -1,3 +1,4 @@
 export interface Token {
-    token: string
+    token: string,
+    user_id: number,
 }

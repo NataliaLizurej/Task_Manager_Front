@@ -16,9 +16,12 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AccountComponent } from './components/account/account.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { AuthGuard } from './Guards/Auth/auth.guard';
+import { LoggedGuard } from './Guards/Logged/logged.guard';
+import { TokenInterceptorService } from './Services/TokenInterceptor/token-interceptor.service';
 
 
 
@@ -49,7 +52,11 @@ import { TasksComponent } from './components/tasks/tasks.component';
     ReactiveFormsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [AuthGuard, LoggedGuard, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent],
 
 })
