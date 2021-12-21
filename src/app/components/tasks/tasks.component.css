@@ -1,0 +1,22 @@
+.tasks-main-div {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-card-tasks {
+    width: 1400px;
+    height: 600px;
+    border-radius: 35px;
+    margin-top: 2%;
+    text-align: center;
+}
+
+:host ::ng-deep .mat-card {
+    border-color: #0ca2c7 !important;
+    border-style: solid !important;
+    border-width: 2px !important;
+}
+
+
+
+

@@ -1,5 +1,5 @@
 .main-div {
-    margin-top: 12%;
+    margin-top: 10%;
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
@@ -10,6 +10,7 @@
     height: 300px;
     text-align: center;
     color: gray;
+    border-radius: 35px;
 }
 
 .example-card-two {
@@ -17,6 +18,7 @@
     height: 300px;
     text-align: center;
     color: gray;
+    border-radius: 35px;
 }
 
 .example-card-three {
@@ -24,10 +26,11 @@
     height: 300px;
     text-align: center;
     color: gray;
+    border-radius: 35px;
 }
 
 :host ::ng-deep .mat-card {
     border-color: #0ca2c7 !important;
     border-style: solid !important;
-    border-width: 1px !important;
+    border-width: 2px !important;
 }

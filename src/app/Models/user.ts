@@ -1,6 +1,6 @@
 export interface User {
-    id: number;
-    user: number;
-    team: number;
+    id: number; // ID PROFILE (NOT ID USER)
+    username: string;
+    team: string;
     role: string;
 }

@@ -19,5 +19,5 @@
 :host ::ng-deep .mat-card {
     border-color: #0ca2c7 !important;
     border-style: solid !important;
-    border-width: 1px !important;
+    border-width: 2px !important;
 }

@@ -1,6 +1,9 @@
 <div class="account-main-div">
     <mat-card class="account-card">
-        <h1 class="h1-card">Hi!</h1>
+        <h1 class="h1-card">Hi {{ username }}</h1>
         <button (click)="detail()">klik</button>
+        <p>Your role: {{ role }}</p>
+        <p>Your team: {{ team }}</p>
+        <p>Your id profile: {{ id }}</p>
     </mat-card>
 </div>

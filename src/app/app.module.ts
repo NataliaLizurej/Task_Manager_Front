@@ -22,7 +22,9 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { AuthGuard } from './Guards/Auth/auth.guard';
 import { LoggedGuard } from './Guards/Logged/logged.guard';
 import { TokenInterceptorService } from './Services/TokenInterceptor/token-interceptor.service';
-
+import {MatTableModule} from '@angular/material/table';
+import { TableLeaderComponent } from './components/table-leader/table-leader.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -35,6 +37,7 @@ import { TokenInterceptorService } from './Services/TokenInterceptor/token-inter
     LoginComponent,
     AccountComponent,
     TasksComponent,
+    TableLeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +53,8 @@ import { TokenInterceptorService } from './Services/TokenInterceptor/token-inter
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [AuthGuard, LoggedGuard, {
