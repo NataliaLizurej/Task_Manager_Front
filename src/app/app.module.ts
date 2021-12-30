@@ -25,6 +25,12 @@ import { TokenInterceptorService } from './Services/TokenInterceptor/token-inter
 import {MatTableModule} from '@angular/material/table';
 import { TableLeaderComponent } from './components/table-leader/table-leader.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { DialogAddTaskComponent } from './components/dialog-add-task/dialog-add-task.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+import { TableProgrammerComponent } from './components/table-programmer/table-programmer.component';
+import { DialogDeleteTaskComponent } from './components/dialog-delete-task/dialog-delete-task.component';
+
 
 
 
@@ -38,7 +44,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AccountComponent,
     TasksComponent,
     TableLeaderComponent,
+    DialogAddTaskComponent,
+    TableProgrammerComponent,
+    DialogDeleteTaskComponent,
   ],
+  entryComponents: [DialogAddTaskComponent, DialogDeleteTaskComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -54,7 +64,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     HttpClientModule,
     ReactiveFormsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule,
+    MatSelectModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [AuthGuard, LoggedGuard, {

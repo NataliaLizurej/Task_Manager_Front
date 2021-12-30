@@ -1,0 +1,42 @@
+.main-div {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.example-card {
+  width: 350px;
+  height: 550px;
+  text-align: center;
+}
+
+.matNativeControl {
+  background-color: white;
+}
+
+.two-btn {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+:host ::ng-deep .mat-focused .mat-form-field-label {
+  color:  #0ca2c7 !important;
+}
+
+:host ::ng-deep .mat-form-field-underline {
+  background-color: gray !important;
+} 
+
+:host ::ng-deep .mat-form-field-ripple {
+ background-color:  #0ca2c7 !important;
+}
+
+:host ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: white;
+}
+
+:host ::ng-deep .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background-color: white;
+}
+

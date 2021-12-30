@@ -9,15 +9,22 @@
     border-radius: 35px;
     margin-top: 4%;
     text-align: center;
+    color: black;
+    font-size: larger;
 }
 
 .h1-card {
-    color: gray;
+    color: #0ca2c7;
     font-size:x-large;
+    font-weight:normal;
 }
 
 :host ::ng-deep .mat-card {
     border-color: #0ca2c7 !important;
     border-style: solid !important;
     border-width: 2px !important;
+}
+
+.img_account {
+    margin-top: 10%;
 }

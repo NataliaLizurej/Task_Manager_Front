@@ -1,0 +1,59 @@
+<div class="main-div">
+  <mat-card class="example-card">
+      <div class="in-div">
+          <br>
+          <h2 class="nag2">Add Task</h2>
+          <br>
+          <form [formGroup]="dialogTaskService.taskForm">
+          <mat-form-field class="mat-form-field-exmp">
+              <mat-label>Title</mat-label>
+              <input matInput formControlName="title">
+              <mat-error class="error">Title is required!</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Author</mat-label>
+            <mat-select disableRipple formControlName="author">
+              <mat-option [value]="dialogTaskService.id_profile_author">{{dialogTaskService.username_author}}</mat-option>
+            </mat-select>
+            <mat-error class="error">Author is required!</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Worker</mat-label> 
+            <mat-select disableRipple formControlName="worker">
+              <mat-option [value]="worker" *ngFor="let worker of dialogTaskService.list_workers">{{worker.username}}</mat-option>
+            </mat-select>
+            <mat-error class="error">Worker is required!</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>Description</mat-label>
+              <input matInput formControlName="description">
+          </mat-form-field>
+          <mat-form-field>
+              <mat-label>Url</mat-label>
+              <input matInput formControlName="url">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Status</mat-label>
+            <mat-select disableRipple formControlName="status">
+              <mat-option value="Created">Created</mat-option>
+              <mat-option value="In progress">In proccess</mat-option>
+              <mat-option value="Done">Done</mat-option>
+              <mat-option value="Close">Close</mat-option>
+            </mat-select>
+            <mat-error class="error">Status is required!</mat-error>
+          </mat-form-field>
+          <br><br>
+          <div class="two-btn">
+            <mat-card-actions>
+              <button mat-stroked-button [disabled]="dialogTaskService.taskForm.invalid" (click)="dialogTaskService.newTask()">Submit</button>
+            </mat-card-actions>
+            <mat-card-actions>
+              <button mat-stroked-button>Cancel</button>
+            </mat-card-actions>
+          </div>
+        </form>
+      </div>
+  </mat-card>
+</div> 
+
+
