@@ -2,7 +2,6 @@
     <mat-card class="mat-card-tasks">
         <app-table-leader *ngIf="isTeamLeader()"></app-table-leader>
         <app-table-programmer  *ngIf="!isTeamLeader()"></app-table-programmer>
-        <!-- <app-dialog-add-task></app-dialog-add-task> -->
     </mat-card>
 </div>
 

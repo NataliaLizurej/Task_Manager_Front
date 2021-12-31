@@ -34,7 +34,6 @@ displayedColumns = ['id','title','author','worker','description','url','status',
 ngOnInit(): void {
   this.detailIdProfile();
   this.getTeam();
-  // this.createTask();
 }
 
 public detailIdProfile() {
@@ -76,7 +75,9 @@ getTeam() {
 
 
 openAddTask() {
-  this.dialog.open(DialogAddTaskComponent);
+  this.dialog.open(DialogAddTaskComponent, {
+    disableClose: true,
+  });
 }
 
 public deleteTask(id_task: string) {
@@ -92,17 +93,6 @@ public deleteTask(id_task: string) {
       }
     }
   );
-}
-
-public createTask() {
-  this.taskService.createNewTask("nowy", 18, 20, "kom", "url", "Created").subscribe(
-    value => {
-      console.log(value);
-    },
-    error => {
-      console.log(console.error);
-    }
-  )
 }
 
 

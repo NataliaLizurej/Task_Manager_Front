@@ -78,6 +78,7 @@ export class DialogTaskService {
    this.taskService.createNewTask(this.t, this.a, this.w, this.d, this.u, this.s).subscribe(
      value => {
        console.log(value);
+       window.location.reload()
      },
      error => {
        console.log(console.error);
