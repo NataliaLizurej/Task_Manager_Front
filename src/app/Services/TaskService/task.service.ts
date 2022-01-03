@@ -9,6 +9,8 @@ const API_TASK_WORKER = "http://127.0.0.1:8000/api/task-list-worker/"
 const API_TASK_DELETE = "http://127.0.0.1:8000/api/task-delete/"
 const API_TASK_LIST_WORKERS = "http://127.0.0.1:8000/api/profile-list-team/"
 const API_CREATE_NEW_TASK = "http://127.0.0.1:8000/api/task-create/"
+const API_UPDATE_TASK = "http://127.0.0.1:8000/api/task-update/"
+
 
 
 
@@ -47,6 +49,17 @@ export class TaskService {
   }
 
 
-
+  public updateThisTask(id: number, title: string, author_id: number, worker_id: number, description: string, url: string, status: string): Observable<Task> {
+    return this.http.put<Task>(API_UPDATE_TASK + id + "/", {
+      id: id,
+      title: title,
+      author: author_id,
+      worker: worker_id,
+      description: description,
+      url:url,
+      status: status
+    })
+  }
+  
 
 }

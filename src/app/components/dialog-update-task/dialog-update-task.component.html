@@ -1,0 +1,23 @@
+<mat-card>
+    <div class="dialog-update">
+        <h2 class="h2-dialog">{{ data.message }}</h2>
+        <form [formGroup]="dialogUpdateService.updateForm">
+        <mat-dialog-actions>
+            <mat-form-field appearance="fill" class="mat-status">
+            <mat-label>Status</mat-label>
+            <mat-select disableRipple formControlName="status">
+                <mat-option value="Created" *ngIf="isTeamLeader()">Created</mat-option>
+                <mat-option value="In proccess">In proccess</mat-option>
+                <mat-option value="Done">Done</mat-option>
+                <mat-option value="Closed" *ngIf="isTeamLeader()">Closed</mat-option>
+            </mat-select>
+            <mat-error class="error">Status is required!</mat-error>
+            </mat-form-field>
+            <div class="dialog-buttons">
+                <button mat-flat-button mat-dialog-close="true" class="delete-button" [disabled]="dialogUpdateService.updateForm.invalid" (click)="dialogUpdateService.getStatus()">Update</button>
+                <button mat-flat-button mat-dialog-close class="cancel-button">Cancel</button>
+            </div>
+        </mat-dialog-actions>
+        </form>
+    </div>
+</mat-card>

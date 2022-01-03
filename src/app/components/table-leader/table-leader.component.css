@@ -17,3 +17,23 @@ table {
 :host ::ng-deep .mat-cell {
     text-align: left;
 }
+
+.Created {
+    color: #0ca2c7;
+    font-weight: bolder;
+}
+
+.In-proccess {
+    color: #fcbe03;
+    font-weight: bolder;
+}
+
+.Done {
+    color: #57cf97;
+    font-weight: bolder;
+}
+
+.Closed {
+    color: #de4b9a;
+    font-weight: bolder;
+}

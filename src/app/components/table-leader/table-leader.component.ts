@@ -10,6 +10,7 @@ import { DialogAddTaskComponent } from '../dialog-add-task/dialog-add-task.compo
 import { LoginService } from 'src/app/Services/LoginService/login.service';
 import { DialogDeleteTaskComponent } from '../dialog-delete-task/dialog-delete-task.component';
 import { DialogService } from 'src/app/Services/DialogService/dialog.service';
+import { DialogUpdateService } from 'src/app/Services/DialogUpdateTask/dialog-update.service';
 
 
 @Component({
@@ -21,7 +22,9 @@ import { DialogService } from 'src/app/Services/DialogService/dialog.service';
 
 export class TableLeaderComponent implements OnInit {
 
-constructor(private userService: UserService, private taskService: TaskService, private loginService: LoginService, public dialog: MatDialog, private dialogService: DialogService) {}
+constructor(private userService: UserService, private taskService: TaskService, private loginService: LoginService, public dialog: MatDialog, private dialogService: DialogService, private dialogUpdateService: DialogUpdateService) {}
+
+declare new_status: any;
 
 team: any;
 data: any;
@@ -96,4 +99,25 @@ public deleteTask(id_task: string) {
 }
 
 
+public updateTask(obj) {
+  this.dialogUpdateService.openUpdateTask('Update status').afterClosed().subscribe(
+    value => {
+      if(value) {
+        this.new_status = this.dialogUpdateService.getStatus()
+        console.log(this.new_status)
+        console.log(obj)
+        this.taskService.updateThisTask(obj.id, obj.title, obj.author, obj.worker, obj.description, obj.url, this.new_status).subscribe(
+          value => {
+            console.log(value) 
+            window.location.reload()
+          }
+        )
+      }
+    }
+  )
 }
+
+
+
+}
+

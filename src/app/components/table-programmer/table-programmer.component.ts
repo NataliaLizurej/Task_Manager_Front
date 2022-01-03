@@ -6,6 +6,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import { TaskService } from 'src/app/Services/TaskService/task.service';
 import { Task } from 'src/app/Models/task';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DialogUpdateService } from 'src/app/Services/DialogUpdateTask/dialog-update.service';
 
 
 @Component({
@@ -15,8 +16,9 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 })
 export class TableProgrammerComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private userService: UserService, private taskService: TaskService, public dialog: MatDialog) { }
+  constructor(private loginService: LoginService, private userService: UserService, private taskService: TaskService, public dialog: MatDialog,private dialogUpdateService: DialogUpdateService) { }
 
+  declare new_status: any;
   
 team: any;
 data: any;
@@ -66,5 +68,24 @@ public tasksWorker(id_profile: number) {
       }
     )
   }
+
+  public updateTask(obj) {
+    this.dialogUpdateService.openUpdateTask('Update status').afterClosed().subscribe(
+      value => {
+        if(value) {
+          this.new_status = this.dialogUpdateService.getStatus()
+          console.log(this.new_status)
+          console.log(obj)
+          this.taskService.updateThisTask(obj.id, obj.title, obj.author, obj.worker, obj.description, obj.url, this.new_status).subscribe(
+            value => {
+              console.log(value) 
+              window.location.reload()
+            }
+          )
+        }
+      }
+    )
+  }
+  
 
 }

@@ -30,6 +30,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import { TableProgrammerComponent } from './components/table-programmer/table-programmer.component';
 import { DialogDeleteTaskComponent } from './components/dialog-delete-task/dialog-delete-task.component';
+import { DialogUpdateTaskComponent } from './components/dialog-update-task/dialog-update-task.component';
 
 
 
@@ -47,8 +48,9 @@ import { DialogDeleteTaskComponent } from './components/dialog-delete-task/dialo
     DialogAddTaskComponent,
     TableProgrammerComponent,
     DialogDeleteTaskComponent,
+    DialogUpdateTaskComponent,
   ],
-  entryComponents: [DialogAddTaskComponent, DialogDeleteTaskComponent],
+  entryComponents: [DialogUpdateTaskComponent, DialogAddTaskComponent, DialogDeleteTaskComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
