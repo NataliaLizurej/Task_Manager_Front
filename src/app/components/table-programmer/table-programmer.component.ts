@@ -7,6 +7,7 @@ import { TaskService } from 'src/app/Services/TaskService/task.service';
 import { Task } from 'src/app/Models/task';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogUpdateService } from 'src/app/Services/DialogUpdateTask/dialog-update.service';
+import { MatSort } from '@angular/material/sort';
 
 
 @Component({
@@ -22,15 +23,15 @@ export class TableProgrammerComponent implements OnInit {
   
 team: any;
 data: any;
-displayedColumns = ['title','author','worker','description','url','status','actions'];
+displayedColumns = ['id','title','author','worker','description','url','status','actions'];
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
+@ViewChild(MatSort, {static: false}) sort: MatSort;
 
   ngOnInit(): void {
     this.detailIdProfile();
     this.getTeam();
   }
-
 
   
 public detailIdProfile() {
@@ -49,6 +50,7 @@ public tasksWorker(id_profile: number) {
     value => {
       this.data = new MatTableDataSource<Task>(value);
       this.data.paginator = this.paginator;
+      this.data.sort = this.sort;
       console.log(this.data)
     },
     error => {
@@ -85,6 +87,15 @@ public tasksWorker(id_profile: number) {
         }
       }
     )
+  }
+
+  public disabledUpdate(obj) {
+    if(obj.status == "Closed") {
+      return false;
+    }
+    else {
+      return true;
+    }
   }
   
 

@@ -28,6 +28,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { DialogAddTaskComponent } from './components/dialog-add-task/dialog-add-task.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
 import { TableProgrammerComponent } from './components/table-programmer/table-programmer.component';
 import { DialogDeleteTaskComponent } from './components/dialog-delete-task/dialog-delete-task.component';
 import { DialogUpdateTaskComponent } from './components/dialog-update-task/dialog-update-task.component';
@@ -69,6 +70,7 @@ import { DialogUpdateTaskComponent } from './components/dialog-update-task/dialo
     MatPaginatorModule,
     MatDialogModule,
     MatSelectModule,
+    MatSortModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [AuthGuard, LoggedGuard, {
