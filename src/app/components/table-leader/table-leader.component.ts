@@ -11,6 +11,8 @@ import { LoginService } from 'src/app/Services/LoginService/login.service';
 import { DialogDeleteTaskComponent } from '../dialog-delete-task/dialog-delete-task.component';
 import { DialogService } from 'src/app/Services/DialogService/dialog.service';
 import { DialogUpdateService } from 'src/app/Services/DialogUpdateTask/dialog-update.service';
+import { MatSort } from '@angular/material/sort';
+
 
 
 @Component({
@@ -31,6 +33,7 @@ data: any;
 displayedColumns = ['id','title','author','worker','description','url','status','actions'];
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
+@ViewChild(MatSort, {static: false}) sort: MatSort;
 
  
 
@@ -55,6 +58,7 @@ public tasksAuthor(id_profile: number) {
     value => {
       this.data = new MatTableDataSource<Task>(value);
       this.data.paginator = this.paginator;
+      this.data.sort = this.sort;
       console.log(this.data)
     },
     error => {

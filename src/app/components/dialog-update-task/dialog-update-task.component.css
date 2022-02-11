@@ -44,3 +44,11 @@
     background-color:  #0ca2c7 !important;
 }
    
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: #0ca2c7 !important;
+}
+
+.mat-option.mat-active {
+    background: rgba(0,0,0,.04);
+    color: #0ca2c7 !important;
+}
