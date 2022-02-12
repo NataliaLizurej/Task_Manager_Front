@@ -20,7 +20,7 @@ This repository is the frontend representation of the application.
 6. Delete task
 7. Update task status
 
-< a  name = "django-administration" ></ a > 
+<a  name="django-administration"></ a> 
 ## 1. Django administration
 
 
