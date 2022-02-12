@@ -12,7 +12,7 @@ This repository is the frontend representation of the application.
 
 ## Table of contents
 
-1. Django administration 
+1. [Django administration] (#django-administration)
 2. Login page
 3. Account page
 4. Task page
@@ -20,3 +20,4 @@ This repository is the frontend representation of the application.
 6. Delete task
 7. Update task status
 
+## Django administration
