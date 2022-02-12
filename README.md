@@ -23,6 +23,7 @@ This repository is the frontend representation of the application.
 <a  name="django-administration"></a> 
 ## 1. Django administration
 
+
 <a  name="login-page"></a> 
 ## 2. Login page
 
