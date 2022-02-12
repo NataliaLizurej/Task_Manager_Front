@@ -2,6 +2,16 @@
 
 This repository is the frontend representation of the application.
 
+## Technologies
+
+* Angular
+* Angular Material library
+* HTML/CSS
+* TypeScript
+
+
+## Table of contents
+
 1. Django administration 
 2. Login page
 3. Account page
