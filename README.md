@@ -23,7 +23,7 @@ This repository is the frontend representation of the application.
 <a  name="django-administration"></a> 
 ## 1. Django administration
 Django offers a built-in admin panel that can be freely expanded - depending on the needs of the application.
-
+![django_admin](https://user-images.githubusercontent.com/74413186/154537316-c7ddd22f-a555-4748-b137-01e3d1122007.PNG)
 
 <a  name="login-page"></a> 
 ## 2. Login page
