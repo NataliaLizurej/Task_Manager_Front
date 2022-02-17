@@ -23,6 +23,8 @@ This repository is the frontend representation of the application.
 <a  name="django-administration"></a> 
 ## 1. Django administration
 
+![admin](https://user-images.githubusercontent.com/74413186/154535557-f74f7d8d-dcb8-4681-80b5-50c224348220.PNG)
+
 
 <a  name="login-page"></a> 
 ## 2. Login page
